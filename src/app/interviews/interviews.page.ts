@@ -15,4 +15,8 @@ export class InterviewsPage implements OnInit {
     this.interviews = this.interviewsService.getAllInterviews();
   }
 
+  createNewInterview() {
+    //TO DO : OPEN A ion-MODAL WITH THE HTML content on creation.txt (and remove that file)
+  }
+
 }

@@ -43,9 +43,14 @@ export class InterviewsService {
   }
 
   getAllCurrentInterviews() {
+    //TO DO
     //return interviews where date+time >= right now
   }
 
+  /**
+   * Returns all the interviews related to a specific company 
+   * @param companyName
+   */
   getInterviews(companyName: string) {
     return [...this.interviews.filter(interview => interview.companyName === companyName)];
   }
