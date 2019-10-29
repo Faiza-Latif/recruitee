@@ -48,15 +48,16 @@ export class InterviewsService {
     }
 
     getAllCurrentInterviews() {
-        // TO DO
-        // return interviews where date+time >= right now
+        return [...this.interviews.filter( interview => {
+          return interview.dateTime.toISOString() > new Date().toISOString();
+      })];
     }
 
     /**
      * Returns all the interviews related to a specific company
      * @param companyName
      */
-    getInterviews(companyName: string) {
+    getInterviewsFromCompany(companyName: string) {
         return [...this.interviews.filter(interview => interview.companyName === companyName)];
     }
 }

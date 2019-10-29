@@ -14,13 +14,15 @@ export class InterviewsPage implements OnInit {
     }
 
     ngOnInit() {
-        this.interviews = this.interviewsService.getAllInterviews().filter( interview => {
-            return interview.dateTime.toISOString() > new Date().toISOString();
-        });
+        this.interviews = this.interviewsService.getAllCurrentInterviews();
     }
 
     createNewInterview() {
         //TO DO : OPEN A ion-MODAL WITH THE HTML content on creation.txt (and remove that file)
+    }
+
+    openRelatedInterviews() {
+      
     }
 
 }
