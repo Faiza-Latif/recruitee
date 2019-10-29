@@ -4,6 +4,7 @@ export interface Interview {
     status: string;
     date: string;
     time: string;
+    dateTime: Date;
     alarm?: boolean;
     calendar?: boolean;
 }
