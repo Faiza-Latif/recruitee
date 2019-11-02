@@ -7,19 +7,25 @@ import { ModalController, NavParams } from '@ionic/angular';
   styleUrls: ['./new-interview.page.scss'],
 })
 export class NewInterviewPage implements OnInit {
-
+  form : any;
+  now : any;
   constructor(
     private modalController: ModalController,
     private navParams: NavParams
-  ) { }
+  ) { 
+    this.form = {
+      companyName: "",
+      jobDescription: ""
+    }
+  }
  
   ngOnInit() {
-    console.table(this.navParams);
+    this.now = Date.now().toString;
   }
  
   async closeModal() {
-    const onClosedData: string = "Wrapped Up!";
-    await this.modalController.dismiss(onClosedData);
+    console.log(this.form);
+    await this.modalController.dismiss(this.form);
   }
 
 }
