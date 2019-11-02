@@ -13,7 +13,6 @@ const routes: Routes = [
       loadChildren: './interviews/history/history.module#HistoryPageModule' },
 
     ]},
-  { path: 'creation-page', loadChildren: './creation-page/creation-page.module#CreationPagePageModule' },
   { path: 'new-interview', loadChildren: './new-interview/new-interview.module#NewInterviewPageModule' },
 ];
 

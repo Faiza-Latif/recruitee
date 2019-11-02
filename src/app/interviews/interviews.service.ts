@@ -15,6 +15,7 @@ export class InterviewsService {
             dateTime: new Date('2019-12-15 13:47'),
             alarm: false,
             calendar: false,
+            location: 'picoas'
         },
         {
             companyName: 'Green',
@@ -25,6 +26,7 @@ export class InterviewsService {
             dateTime: new Date('2019-10-18 13:47'),
             alarm: false,
             calendar: false,
+            location: 'odivelas'
         },
         {
             companyName: 'Green',
@@ -35,6 +37,7 @@ export class InterviewsService {
             dateTime: new Date('2019-12-26 19:47'),
             alarm: false,
             calendar: false,
+            location: 'odivelas'
         }
     ];
 
