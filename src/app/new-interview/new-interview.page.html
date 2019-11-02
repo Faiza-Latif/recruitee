@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar text-center>
+    <ion-title>New Interview</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-card-content>
+            <ion-item>
+                <ion-label position="floating">Company's Name</ion-label>
+                <ion-input></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Job description</ion-label>
+                <ion-input></ion-input>
+            </ion-item>
+            <ion-item-divider></ion-item-divider>
+            <ion-item>
+                <ion-label>Date</ion-label>
+                <ion-datetime value="1990-02-19" placeholder="Select Date"></ion-datetime>
+            </ion-item>
+            <ion-item>
+                <ion-label>Time</ion-label>
+                <ion-datetime display-format="h:mm A" picker-format="h:mm A" value="1990-02-19T07:43Z"></ion-datetime>   
+            </ion-item>
+            <ion-item-divider></ion-item-divider>
+            <ion-item>
+                <ion-icon slot="start" name="calendar"></ion-icon>
+                <ion-label>Add to calendar</ion-label>
+                <ion-toggle slot="end" checked></ion-toggle>
+             </ion-item>
+             <ion-item>
+                <ion-icon slot="start" name="alarm"></ion-icon>
+                <ion-label>Add reminder</ion-label>
+                <ion-toggle slot="end" checked></ion-toggle>
+             </ion-item>
+              <div margin-vertical text-right>
+                  <ion-button fill="outline" color="danger">
+                  <ion-icon slot="start" name="close"></ion-icon>Clear
+                  </ion-button>
+                  <ion-button>
+                     <ion-icon slot="start" name="add"></ion-icon>Add appointment
+                  </ion-button>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
