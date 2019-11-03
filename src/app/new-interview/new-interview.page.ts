@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ModuleWithComponentFactories } from '@angular/core';
 import { ModalController, NavParams } from '@ionic/angular';
+import * as moment from 'moment';
+import { InterviewsService } from '../interviews/interviews.service';
 
 @Component({
   selector: 'app-new-interview',
@@ -7,24 +9,38 @@ import { ModalController, NavParams } from '@ionic/angular';
   styleUrls: ['./new-interview.page.scss'],
 })
 export class NewInterviewPage implements OnInit {
-  form : any;
-  now : any;
+  form: any;
+  currentYear: string;
+  currentTime: string;
+  currentDate: string;
   constructor(
     private modalController: ModalController,
+    private interviewsService: InterviewsService,
     private navParams: NavParams
   ) { 
-    this.form = {
-      companyName: "",
-      jobDescription: ""
-    }
+   
   }
  
   ngOnInit() {
-    this.now = Date.now().toString;
-  }
+    this.currentYear = moment().get('year').toString();
+    this.currentDate = moment().format('D-MMM-YYYY');
+    this.currentTime = moment().format('HH:mm');
+
+    this.form = {
+      companyName: "",
+      date: this.currentDate,
+      time: this.currentTime,
+      dateTime: moment().toDate(),
+      location: "",
+      alarm: false,
+      calendar: false,
+      status: ""
+    }
+    }
  
   async closeModal() {
-    console.log(this.form);
+    this.interviewsService.addInterview(this.form);
+    console.log(this.interviewsService.getAllCurrentInterviews());
     await this.modalController.dismiss(this.form);
   }
 

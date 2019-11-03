@@ -16,24 +16,33 @@
                 <ion-input [(ngModel)]="form.companyName" name="companyName"></ion-input>
               </ion-item>
               <ion-item>
-                <ion-label position="floating">Job description</ion-label>
-                <ion-input [(ngModel)]="form.jobDescription" name="jobDescription"></ion-input>
+                <ion-label position="floating">Location</ion-label>
+                <ion-input [(ngModel)]="form.location" name="location"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Status</ion-label>
+                <ion-input [(ngModel)]="form.status" name="status"></ion-input>
               </ion-item>
 
               <ion-item>
                 <ion-label>Date</ion-label>
-                <ion-datetime displayFormat="D MMM YYYY H:mm" min="2018" max="2040" value={{now}}>
+                <ion-datetime [(ngModel)]="form.date" name="date" displayFormat="D MMM YYYY" min={{currentYear}} max="2040">
                 </ion-datetime>
+              </ion-item>
+              
+              <ion-item>
+                <ion-label>Start Time</ion-label>
+                <ion-datetime  [(ngModel)]="form.time" name="time" display-format="HH:mm" picker-format="HH:mm"></ion-datetime>
               </ion-item>
               <ion-item>
                 <ion-icon slot="start" name="calendar"></ion-icon>
                 <ion-label>Add to calendar</ion-label>
-                <ion-toggle slot="end" checked></ion-toggle>
+                <ion-toggle [(ngModel)]="form.calendar" name="calendar" slot="end" checked></ion-toggle>
               </ion-item>
               <ion-item>
                 <ion-icon slot="start" name="alarm"></ion-icon>
                 <ion-label>Add reminder</ion-label>
-                <ion-toggle slot="end" checked></ion-toggle>
+                <ion-toggle [(ngModel)]="form.alarm" name="alarm" slot="end" checked></ion-toggle>
               </ion-item>
             <div margin-vertical text-right>
               <ion-button fill="outline" color="danger">
